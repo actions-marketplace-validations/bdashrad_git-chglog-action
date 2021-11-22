@@ -10,8 +10,9 @@ Further more you need to have [git-chlog](https://github.com/git-chglog/git-chgl
 
 ### Inputs
  - `next_version`: Next version number
- - `config_dir`: git-chglog configuration directory. Default: `.ghglog`
+ - `config_dir`: git-chglog configuration directory. Default: `.chglog`
  - `filename`: Filename to write the changelog to. Default: `CHANGELOG.md`
+ - `git_chglog_version`: git-chglog version. Default `v0.15.0`
  - `tag`: Optional, Generate changelog only for this tag.
 
 ### Outputs
@@ -34,12 +35,13 @@ jobs:
   package:
     runs-on: ubuntu-latest
     steps:
-      - uses: nuuday/github-changelog-action@v1.0.0
+      - uses: bdashr/git-chlog-action@v1.0.0
         with:
           next_version: "1.0.0"      
 ```
 
 ## License
+
 The scripts and documentation in this project are released under the [MIT License](LICENSE)
 
 ## Contributing
@@ -48,10 +50,11 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/nuuday/github-changelog-action/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/bdashrad/git-chglog-action/tags). 
 
 ## Authors
 
-* **Steffen F. Qvistgaard** - *Initial work* - [ssoerensen](https://github.com/ssoerensen)
+- **Steffen F. Qvistgaard** - *Initial work* - [ssoerensen](https://github.com/ssoerensen)
+- **Brad Clark** [bdashrad](https://github.com/bdashrad)
 
-See also the list of [contributors](https://github.com/nuuday/github-changelog-action/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/bdashrad/git-chglog-action/contributors) who participated in this project.

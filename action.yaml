@@ -1,7 +1,7 @@
 name: 'Generate changelog with git-chglog'
-description: 'Generate a changelog using conventional commits using the git-chlog tool'
+description: 'Generate a changelog using using the git-chlog tool'
 branding:
-  icon: 'calendar'  
+  icon: 'code'  
   color: 'green'
 
 inputs:
@@ -19,6 +19,11 @@ inputs:
     default: 'CHANGELOG.md'
     required: false
 
+  git_chglog_version:
+    description: 'Version of git-chglog to run'
+    default: 'v.0.15.0'
+    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -31,3 +36,5 @@ runs:
     - ${{ inputs.filename }}
     - -t
     - ${{ inputs.tag }}
+    - -v
+    - ${{ inputs.git_chglog_version }}

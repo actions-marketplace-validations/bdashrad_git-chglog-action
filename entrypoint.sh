@@ -1,7 +1,7 @@
 #!/bin/sh
 cd /github/workspace/
 
-while getopts "n:c:o:t:" opt; do
+while getopts ":n:c:o:t:" opt; do
   case ${opt} in
     c )
       if [ -z "${OPTARG}" ]; then
@@ -23,6 +23,9 @@ while getopts "n:c:o:t:" opt; do
     t )
       tag="${OPTARG}"
       ;;
+    v )
+      version="${OPTARG}"
+      ;;
   esac
 done
 shift $((OPTIND -1))
@@ -33,6 +36,7 @@ if [ -f "${config}/config.yml" ] && [ -f "${config}/CHANGELOG.tpl.md" ]; then
   echo "::debug ::git-chlog: -n '${next_tag}'"
   echo "::debug ::git-chlog: -o '${output}'"
   echo "::debug ::git-chlog: -t '${tag}'"
+  echo "::debug ::git-chlog: -v '${version}'"
   echo "::info ::git-chlog executing command: /usr/local/bin/git-chglog --config "${config}/config.yml" ${next_tag} ${tag}"
 
   changelog=$(/usr/local/bin/git-chglog --config "${config}/config.yml" ${next_tag} ${tag})

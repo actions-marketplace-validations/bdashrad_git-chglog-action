@@ -44,7 +44,7 @@ jobs:
           fetch-depth: 0
       - name: Generate changelog
         id: gen_changelog
-        uses: bdashrad/git-chglog-action@v2.0.1
+        uses: bdashrad/git-chglog-action@v2.0.2
         with:
           next_version: "1.0.0"
 ```

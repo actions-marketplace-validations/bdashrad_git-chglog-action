@@ -22,7 +22,7 @@ inputs:
 
   git_chglog_version:
     description: 'Version of git-chglog to run'
-    default: 'v.0.15.0'
+    default: '0.15.0'
     required: false
 
   tag:

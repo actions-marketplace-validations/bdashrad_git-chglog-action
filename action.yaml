@@ -24,6 +24,11 @@ inputs:
     default: 'v.0.15.0'
     required: false
 
+  tag:
+    description: 'Optional, Generate changelog only for this tag.'
+    default: ''
+    required: false
+
 runs:
   using: 'docker'
   image: 'Dockerfile'

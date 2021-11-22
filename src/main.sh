@@ -111,7 +111,11 @@ run_git_chglog() {
       echo "${changelog}" > ${output}
     fi
 
-    echo "::set-output name=changelog::$( echo "$changelog" | jq -sRr @uri )"
+    changelog="${changelog//'%'/'%25'}"
+    changelog="${changelog//$'\n'/'%0A'}"
+    changelog="${changelog//$'\r'/'%0D'}"
+
+    echo "::set-output name=changelog::$( echo "$changelog")"
 
   else 
     echo "::warning ::git-chlog configuration was not found, skipping changelog generation."

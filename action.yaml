@@ -1,4 +1,5 @@
-name: 'Generate changelog with git-chglog'
+---
+name: 'git-chglog action'
 description: 'Generate a changelog using using the git-chglog tool'
 branding:
   icon: 'code'  
@@ -28,6 +29,10 @@ inputs:
     description: 'Optional, Generate changelog only for this tag.'
     default: ''
     required: false
+
+outputs:
+  changelog:
+    description: 'Changelog in markdown.'
 
 runs:
   using: 'docker'

@@ -1,5 +1,5 @@
 name: 'Generate changelog with git-chglog'
-description: 'Generate a changelog using using the git-chlog tool'
+description: 'Generate a changelog using using the git-chglog tool'
 branding:
   icon: 'code'  
   color: 'green'

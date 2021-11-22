@@ -35,9 +35,9 @@ jobs:
   package:
     runs-on: ubuntu-latest
     steps:
-      - uses: bdashr/git-chlog-action@v1.0.0
+      - uses: bdashrad/git-chlog-action@v1.0.0
         with:
-          next_version: "1.0.0"      
+          next_version: "1.0.0"
 ```
 
 ## License

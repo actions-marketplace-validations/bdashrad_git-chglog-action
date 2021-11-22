@@ -1,9 +1,13 @@
 #!/usr/bin/env sh
 
+set -o errexit
+set -o nounset
+set -o pipefail
+
 DEFAULT_GIT_CHGLOG_VERSION=0.15.0
 DEFAULT_GIT_CHGLOG_CONFIG="./.chglog"
 
-cd /github/workspace/
+cd "/github/workspace/" || exit 1
 
 pwd
 

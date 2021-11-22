@@ -22,20 +22,29 @@ Further more you need to have [git-chlog](https://github.com/git-chglog/git-chgl
 On every `push` to `master` generate a CHANGELOG.md file.
 
 ```yaml
-name: Build and release
+---
+name: Create changelog
 on: 
   push:
     branches:
       - master
+      - main
   pull_request:
     branches:
       - master
+      - main
 
 jobs:
-  package:
+  generate_changelog:
     runs-on: ubuntu-latest
     steps:
-      - uses: bdashrad/git-chlog-action@v2.0.0
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Generate changelog
+        id: gen_changelog
+        uses: bdashrad/git-chglog-action@v2.1.0
         with:
           next_version: "1.0.0"
 ```
